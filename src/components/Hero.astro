@@ -110,21 +110,25 @@ const { src = Art } = Astro.props
 <script is:inline src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
   import { setParticles } from '../scripts/particles'
-  const dark = localStorage.getItem('darkMode') === 'enabled'
-  const configPath = dark ? '/assets/particles-dark.json' : '/assets/particles.json'
-  setParticles('video-background', configPath)
+  import { mouseFollower } from '../scripts/mouse-follower'
 
-  const darkModeToggle = document.querySelector('.darkmode-toggle')
-  darkModeToggle.addEventListener('click', () => {
+  const redflag = !!localStorage.getItem('redflag')
+  const darktoggle = document.querySelector('.darkmode-toggle')
+  const darkmode = () => !!localStorage.getItem('darkMode')
+  const configPath = () => `/assets/particles${darkmode() ? '-dark' : ''}.json`
+
+  setParticles('video-background', configPath())
+  darktoggle.addEventListener('click', () => {
     setTimeout(() => {
-      const dark = localStorage.getItem('darkMode') === 'enabled'
-      console.log(dark)
-      const configPath = dark ? '/assets/particles-dark.json' : '/assets/particles.json'
-      setParticles('video-background', configPath)
+      if (!darkmode()) localStorage.setItem('redflag', 'true')
+      setParticles('video-background', configPath())
     }, 300)
   })
 
-  import { mouseFollower } from '../scripts/mouse-follower'
+  if (!redflag) {
+    darktoggle.dispatchEvent(new Event('click'))
+  }
+
   mouseFollower('[data-follower]', 'scale(1.5)')
 </script>
 
