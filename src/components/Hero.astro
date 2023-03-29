@@ -125,7 +125,7 @@ const { src = Art } = Astro.props
     }, 300)
   })
 
-  if (!redflag) {
+  if (!redflag && !darkmode()) {
     darktoggle.dispatchEvent(new Event('click'))
   }
 
