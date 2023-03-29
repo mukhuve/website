@@ -29,7 +29,7 @@ const { name, phrase, description, lang = 'en' } = Astro.props
       url={`${Astro.site}/${name?.toLowerCase().replaceAll(' ', '-')}`}
     />
   </head>
-  <body>
+  <body class="darkmode">
     <Header />
     <main id="main-content">
       <slot />
