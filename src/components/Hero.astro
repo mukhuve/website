@@ -114,7 +114,7 @@ const { src = Art } = Astro.props
 
   const redflag = !!localStorage.getItem('redflag')
   const darktoggle = document.querySelector('.darkmode-toggle')
-  const darkmode = () => !!localStorage.getItem('darkMode')
+  const darkmode = () => localStorage.getItem('darkMode') === 'enabled'
   const configPath = () => `/assets/particles${darkmode() ? '-dark' : ''}.json`
 
   setParticles('video-background', configPath())
