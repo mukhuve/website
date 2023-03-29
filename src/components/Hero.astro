@@ -111,7 +111,7 @@ const { src = Art } = Astro.props
 <script>
   import { setParticles } from '../scripts/particles'
   const dark = localStorage.getItem('darkMode') === 'enabled'
-  const configPath = dark ? '/src/assets/particles-dark.json' : '/src/assets/particles.json'
+  const configPath = dark ? '/assets/particles-dark.json' : '/assets/particles.json'
   setParticles('video-background', configPath)
 
   const darkModeToggle = document.querySelector('.darkmode-toggle')
@@ -119,7 +119,7 @@ const { src = Art } = Astro.props
     setTimeout(() => {
       const dark = localStorage.getItem('darkMode') === 'enabled'
       console.log(dark)
-      const configPath = dark ? '/src/assets/particles-dark.json' : '/src/assets/particles.json'
+      const configPath = dark ? '/assets/particles-dark.json' : '/assets/particles.json'
       setParticles('video-background', configPath)
     }, 300)
   })
