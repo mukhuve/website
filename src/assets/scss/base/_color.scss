@@ -1,0 +1,45 @@
+// | -------------------------------------------------------------
+// | Color
+// | -------------------------------------------------------------
+
+$primary-hue: 170;
+$secondary-hue: 208;
+
+$colors: (
+  primary: (
+    100: hsl($primary-hue, 81%, 60%),
+    200: hsl($primary-hue, 80%, 45%),
+    300: hsl($primary-hue, 72%, 40%),
+    400: hsl($primary-hue, 75%, 35%),
+    500: hsl($primary-hue, 90%, 25%),
+  ),
+  secondaryy: (
+    100: hsl($secondary-hue, 90%, 60%),
+    200: hsl($secondary-hue, 80%, 55%),
+    300: hsl($secondary-hue, 70%, 50%),
+    400: hsl($secondary-hue, 60%, 45%),
+    500: hsl($secondary-hue, 66%, 14%),
+  
+  ),
+  secondary: (
+    100: hsl($secondary-hue, 90%, 60%),
+    200: hsl($secondary-hue, 80%, 55%),
+    300: hsl($secondary-hue, 70%, 50%),
+    400: hsl($secondary-hue, 60%, 45%),
+    500: hsl($secondary-hue, 55%, 40%),
+  ),
+  neutral: (
+    100: hsl($secondary-hue, 0%, 100%),
+    200: hsl($secondary-hue, 23%, 97%),
+    300: hsl($secondary-hue, 12%, 95%),
+    400: hsl($secondary-hue, 12%, 88%),
+    500: hsl($secondary-hue, 13%, 83%),
+    600: hsl($secondary-hue, 6%, 55%),
+    700: hsl($secondary-hue, 8%, 31%),
+    800: hsl($secondary-hue, 9%, 22%),
+    900: hsl($secondary-hue, 10%, 14%),
+  ),
+  dark: (
+    100: hsl(240, 4%, 9%),
+  ),
+);

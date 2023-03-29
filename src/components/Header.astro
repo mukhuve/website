@@ -1,0 +1,40 @@
+---
+import { SkipLinks } from 'accessible-astro-components'
+// import { LanguageSelector } from 'astro-i18next/components'
+import Navigation from '../components/Navigation.astro'
+---
+
+<header>
+  <SkipLinks />
+  <Navigation>
+    <!-- <li class="menu-item"> -->
+      <!-- <LanguageSelector showFlag={true} class="menu-item has-dropdown" /> -->
+    <!-- </li> -->
+  </Navigation>
+</header>
+
+<style lang="scss" is:global>
+  @use '../assets/scss/base/outline' as *;
+
+  header {
+    .type-icon a {
+      display: block;
+
+      [astro-icon] {
+        margin-top: -4px;
+        width: 30px;
+
+        path {
+          fill: var(--action-color);
+          transition: fill 0.2s ease-in-out;
+        }
+      }
+
+      &:hover {
+        [astro-icon] path {
+          fill: var(--action-color-state);
+        }
+      }
+    }
+  }
+</style>

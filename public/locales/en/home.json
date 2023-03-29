@@ -1,0 +1,33 @@
+{
+  "services": "Services",
+  "features": {
+    "platform": {
+      "title": "Platform design",
+      "content": "We create web platforms and applications tailored to your needs"
+    },
+    "websites": {
+      "title": "Websites",
+      "content": "We can create modern and functional websites for your business"
+    },
+    "crossplatform": {
+      "title": "Cross-platform",
+      "content": "We make applications in all ecosystems, safe and reliable"
+    },
+    "design": {
+      "title": "Web Design",
+      "content": "Modern designs and thought with attention for your business"
+    },
+    "marketing": {
+      "title": "Digital Marketing",
+      "content": "We offer digital marketing services to help you promote your business online"
+    }
+  },
+  "ux": {
+    "title": "Client Experience",
+    "content": "With an easy-to-use and attractive interface, users will enjoy a fluid and satisfying experience. Let us create a digital platform that faithfully represents your brand and meets your business objectives."
+  },
+  "platform": {
+    "title": "Platform design",
+    "content": "The key to a successful digital platform goes from a good design to a solid and efficient construction. In our team, we have experts in design and development of digital infrastructure, who work together to create that personalized platform that meets your needs and those of your customers."
+  }
+}

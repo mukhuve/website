@@ -1,0 +1,63 @@
+---
+import { Media } from 'accessible-astro-components'
+
+interface Props {
+  src?: string
+  reverse?: boolean
+}
+
+const { src, reverse = false } = Astro.props
+---
+
+<section class="my-64">
+  <div class="container">
+    <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
+      <div class="media-container rounded-lg" style={'order: ' + (reverse ? 2 : 0)}>
+        <Media class="rounded-lg" src={src} />
+      </div>
+      <div class="space-content flex flex-col justify-center">
+        <slot />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .media-container {
+    position: relative;
+    background: linear-gradient(315deg, var(--secondary-500) 25%, var(--primary-100));
+    min-height: 25rem;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(-45deg, #2e6a9e 0%, #46ecd0 100%);
+      transform: translate3d(0px, 20px, 0) scale(0.95);
+      filter: blur(20px);
+      opacity: var(0.7);
+      transition: opacity 0.3s;
+      border-radius: inherit;
+    }
+
+    &:after {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: inherit;
+      border-radius: inherit;
+    }
+  }
+</style>

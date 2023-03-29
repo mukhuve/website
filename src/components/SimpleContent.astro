@@ -1,0 +1,10 @@
+---
+const { title, mt = 64, mb = 64, id } = Astro.props
+---
+
+<section class={'mt-' + mt + ' mb-' + mb + ' '} id={id}>
+  <div class="container">
+    {title ? <h2 class="mb-16 text-6xl">{title}</h2> : null}
+    <slot />
+  </div>
+</section>

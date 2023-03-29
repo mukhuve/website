@@ -1,0 +1,70 @@
+---
+import Feature from '@components/Feature.astro'
+import Hero from '@components/Hero.astro'
+import MediaContent from '@components/MediaContent.astro'
+import SimpleContent from '@components/SimpleContent.astro'
+import Page from '@layouts/Page.astro'
+import i18next, { t } from 'i18next'
+---
+
+<Page name="Home" lang={i18next.language}>
+  <Hero />
+  <SimpleContent title={t('home:services')} id="services">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <Feature icon="mdi:server-security" title={t('home:features.platform.title')}>
+        {t('home:features.platform.content')}
+      </Feature>
+      <Feature icon="mdi:application-brackets-outline" title={t('home:features.websites.title')}>
+        {t('home:features.websites.content')}
+      </Feature>
+      <Feature icon="mdi:monitor-cellphone-star" title={t('home:features.crossplatform.title')}>
+        {t('home:features.crossplatform.content')}
+      </Feature>
+      <Feature icon="mdi:pencil-ruler" title={t('home:features.design.title')}>
+        {t('home:features.design.content')}
+      </Feature>
+      <Feature icon="mdi:basket-fill" title={t('home:features.marketing.title')}>
+        {t('home:features.marketing.content')}
+      </Feature>
+    </div>
+  </SimpleContent>
+  <MediaContent src="/src/assets/img/illustration-8.svg">
+    <h2>{t('home:ux.title')}</h2>
+    <p class="text-2xl">{t('home:ux.content')}</p>
+  </MediaContent>
+  <MediaContent src="/src/assets/img/illustration-9.svg" reverse={true}>
+    <h2>{t('home:platform.title')}</h2>
+    <p class="text-2xl">{t('home:platform.content')}</p>
+  </MediaContent>
+  <SimpleContent mb={32}>
+    <h2 class="text-center text-gray">Nuestros aliados</h2>
+    <div class="ally">
+      <img src="/src/assets/img/google.png" alt="Goolge" />
+      <img src="/src/assets/img/microsoft.png" alt="Microsoft" />
+      <img src="/src/assets/img/openai.png" alt="OpenAI" />
+      <img src="/src/assets/img/azure.png" alt="Azure" />
+      <img src="/src/assets/img/github.png" alt="Github" />
+      <img src="/src/assets/img/aws.png" alt="AWS" class="p-5" />
+    </div>
+  </SimpleContent>
+</Page>
+
+<style lang="scss">
+  .ally {
+    filter: saturate(0);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4rem;
+    gap: 0 3rem;
+    img {
+      max-width: 15vw;
+      width: auto;
+    }
+  }
+
+  :global(.darkmode .ally) {
+    filter: saturate(0) invert(1);
+  }
+</style>

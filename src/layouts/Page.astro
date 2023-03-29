@@ -1,0 +1,39 @@
+---
+import { HeadHrefLangs } from 'astro-i18next/components'
+import '../assets/scss/globals.scss'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import SiteMeta from '../components/SiteMeta.astro'
+
+interface Props {
+  name: string
+  phrase?: string
+  description?: string
+  lang?: string
+}
+
+const { name, phrase, description, lang = 'en' } = Astro.props
+---
+
+<html lang={lang} dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <HeadHrefLangs />
+    <SiteMeta
+      page={name}
+      phrase={phrase}
+      description={description?.substring(0, 100)}
+      url={`${Astro.site}/${name?.toLowerCase().replaceAll(' ', '-')}`}
+    />
+  </head>
+  <body>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
